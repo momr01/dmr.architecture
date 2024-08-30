@@ -1,0 +1,8 @@
+
+.titleSpan {
+    color: rgb(var(--primary));
+}
+
+.content {
+    @apply text-lg text-center;
+}

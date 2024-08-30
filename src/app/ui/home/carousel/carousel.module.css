@@ -1,0 +1,3 @@
+.container {
+    @apply h-dvh bg-black;
+}

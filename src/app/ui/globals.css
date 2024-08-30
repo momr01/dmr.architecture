@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary: 251, 186, 0;
+}
+
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  @apply m-0 p-0 box-border;
+  font-family: "PoppinsRegular", sans-serif;
+}
+
+h2 {
+  @apply text-3xl mb-20 text-center;
+}
+
+section {
+  @apply px-40 py-20;
+}
