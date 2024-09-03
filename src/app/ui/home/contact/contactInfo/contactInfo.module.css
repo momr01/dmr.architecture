@@ -1,0 +1,15 @@
+.container {
+    @apply flex flex-col gap-10;
+}
+
+.contactContainer {
+    @apply flex gap-5 items-center;
+}
+
+.iconContainer {
+    @apply border-2 border-black p-2;
+}
+
+.text {
+    @apply font-semibold text-lg;
+}

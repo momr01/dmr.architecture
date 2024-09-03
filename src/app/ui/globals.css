@@ -16,6 +16,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "CodecProBold";
+  src: url("../assets/fonts/Codec-Pro-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -30,5 +37,6 @@ h2 {
 }
 
 section {
-  @apply px-40 py-20;
+  @apply p-10;
+  @apply lg:px-96 lg:py-20;
 }

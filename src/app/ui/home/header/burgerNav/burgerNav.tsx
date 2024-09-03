@@ -2,7 +2,7 @@
 import { NavItem } from "@/app/interfaces/navItem";
 import React, { useState } from "react";
 
-function BurgerNav({navItems}: { navItems: NavItem[]}) {
+function BurgerNav({navItems, scrolled}: { navItems: NavItem[]; scrolled: boolean}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,17 +13,17 @@ function BurgerNav({navItems}: { navItems: NavItem[]}) {
     <div className="relative">
       <button onClick={toggleMenu} className="focus:outline-none z-10 px-8">
         <div
-          className={`w-8 h-1 bg-gray-300 mb-1 transform transition duration-300 ease-in-out ${
+          className={`w-8 h-1 ${scrolled ? 'bg-black' : 'bg-gray-300'} mb-1 transform transition duration-300 ease-in-out ${
             isOpen ? "rotate-45 translate-y-2" : ""
           }`}
         ></div>
         <div
-          className={`w-8 h-1 bg-gray-300 mb-1 transition duration-300 ease-in-out ${
+          className={`w-8 h-1 ${scrolled ? 'bg-black' : 'bg-gray-300'} mb-1 transition duration-300 ease-in-out ${
             isOpen ? "opacity-0" : ""
           }`}
         ></div>
         <div
-          className={`w-8 h-1 bg-gray-300 transition duration-300 ease-in-out ${
+          className={`w-8 h-1 ${scrolled ? 'bg-black' : 'bg-gray-300'} transition duration-300 ease-in-out ${
             isOpen ? "-rotate-45 -translate-y-2" : ""
           }`}
         ></div>
@@ -39,7 +39,7 @@ function BurgerNav({navItems}: { navItems: NavItem[]}) {
 
       {/* Menu */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transition-transform duration-300 transform ${
+        className={`fixed top-0 right-0 w-64 h-full bg-gray-600 shadow-lg transition-transform duration-300 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

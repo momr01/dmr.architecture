@@ -1,6 +1,7 @@
+"use client"
 import { Carousel } from "flowbite-react";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./carousel.module.css";
 import {
   imgCarousel1,
@@ -9,8 +10,27 @@ import {
 } from "../../../assets/img/carousel/imgCarousel";
 import { FaWhatsapp } from "react-icons/fa";
 import ContactBtn from "@/app/components/contactBtn/contactBtn";
+import Link from "next/link";
+import { useSpring, animated } from "@react-spring/web";
 
 const HomeCarousel = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const slideUp = useSpring({
+    transform: isMounted ? "translateY(0%)" : "translateY(100%)",
+    opacity: isMounted ? 1 : 0,
+    // config: { tension: 200, friction: 20 },
+    config: { tension: 50, friction: 20 },
+  });
+
+
+  const phoneNumber = "+5492613016290";
+  const defaultMessage = "Hola, me gustaría obtener más información.";
+
   return (
     <div className={styles.container}>
       <Carousel
@@ -27,9 +47,18 @@ const HomeCarousel = () => {
             overflow: "hidden",
           }}
         >
-          <div className="absolute z-10 top-1/2 left-1/3 bg-gray-800 p-11 bg-opacity-40 w-1/3">
-            <h2 className="text-white text-4xl text-center">Bienvenidos</h2>
-          </div>
+          <animated.div 
+          style={slideUp}
+          className="absolute z-10 top-1/3 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-1/3">
+            <div 
+            //className="bg-gray-800 bg-opacity-70"
+            >
+              <h2 className="text-white lg:text-[70px]" style={{ fontFamily: "CodecProBold, sans-serif"}}>
+                Bienvenidos
+              </h2>
+            </div>
+          </animated.div>
+
           {/* <div className="absolute z-10 bottom-20 left-1/3 w-1/3 flex justify-center">
         <div className="bg-white px-5 py-2 rounded-2xl flex gap-3">
         <button>Contactame</button>
@@ -39,7 +68,7 @@ const HomeCarousel = () => {
 
         </div> */}
 
-          <ContactBtn
+          {/* <ContactBtn
             positionDiv="absolute"
             positionBtn="center"
             bottom="20"
@@ -48,7 +77,34 @@ const HomeCarousel = () => {
             text="Contactame"
             color="black"
             icon={<FaWhatsapp size={24} className="text-green-400" />}
-          />
+          /> */}
+
+          {/* <div className="absolute z-10 bottom-32 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+            <button className="bg-white px-5 py-2 rounded-2xl flex gap-3">
+              <div className="text-black">Contactame</div>
+              <FaWhatsapp size={24} className="text-green-400" />
+            </button>
+          </div> */}
+          <div className="absolute z-10 bottom-32 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+            <Link
+              legacyBehavior
+              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                defaultMessage
+              )}`}
+              passHref
+              
+            >
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white px-5 py-2 rounded-2xl flex gap-3 hover:bg-green-400 hover:text-white text-green-500 transition duration-300"
+              >
+                {" "}
+                <div className="text-black">Contactame</div>
+                <FaWhatsapp size={24} className="" />
+              </a>
+            </Link>
+          </div>
 
           <Image
             src={imgCarousel1}

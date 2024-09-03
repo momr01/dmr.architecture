@@ -1,28 +1,45 @@
 .header {
-  @apply flex items-center justify-between w-full z-10 fixed bg-opacity-30 bg-gray-800 h-20;
+  @apply flex items-center justify-between w-full z-50 fixed h-20;
   @apply lg:px-40;
 }
 
+.headerTransparent {
+  @apply bg-transparent;
+}
+
+.headerScrolled {
+  /* @apply bg-opacity-30 bg-gray-800; */
+  @apply bg-primary transition duration-500;
+}
+
 .nav {
-    @apply flex items-center text-white font-semibold px-7;
-    @apply lg:px-0;
+  @apply flex items-center font-semibold px-7;
+  @apply lg:px-0;
+}
+
+.navWhite {
+  @apply text-white;
+}
+
+.navBlack {
+  @apply text-black;
 }
 
 .logoLink {
-    @apply font-semibold w-20 ml-7;
-    @apply lg:w-80 lg:ml-0;
+  @apply font-semibold w-20 ml-7;
+  @apply lg:w-80 lg:ml-0;
 }
 
 .itemsContainer {
-    @apply hidden;
-    @apply lg:flex lg:items-center lg:gap-16;
+  @apply hidden;
+  @apply lg:flex lg:items-center lg:gap-16;
 }
 
 .navItem {
-    @apply hidden;
-    @apply lg:block;
+  @apply hidden;
+  @apply lg:block;
 }
 
 .burgerNav {
-    @apply lg:hidden;
+  @apply lg:hidden;
 }

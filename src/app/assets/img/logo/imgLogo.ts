@@ -1,3 +1,4 @@
 import logoCompleteWhite from "./logoCompleteWhite.png";
+import logoCompleteBlackBorder from "./locoCompleteBlackBorder.png";
 
-export {logoCompleteWhite}
+export { logoCompleteWhite, logoCompleteBlackBorder };

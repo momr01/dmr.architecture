@@ -1,28 +1,31 @@
 .blackBg {
-    position: absolute;
-    z-index: 30;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad */
-    pointer-events: none; /* Permite que la imagen sea interactiva */
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad */
+  pointer-events: none; /* Permite que la imagen sea interactiva */
 }
 
 .cardContainer {
-    @apply overflow-hidden relative cursor-pointer flex justify-center items-center;
-    width: 100%; /* Ajusta el tamaño del contenedor según sea necesario */
-    max-width: 600px; /* Ejemplo de ancho máximo */
-    /* height: auto; */
-    height: 600px;
-  }
-  
-  .img {
-    width: 100%;
-    height: auto;
-    transition: transform 3s ease; /* Suaviza la transformación de la imagen */
-  }
-  
-  .cardContainer:hover .img {
-    transform: scale(1.3); /* Aumenta el tamaño de la imagen al hacer hover */
-  }
+  @apply overflow-hidden relative cursor-pointer flex justify-center items-center h-[500px] w-full max-w-[600px];
+  @apply lg:h-[600px];
+  /* width: 100%;  */
+  /* Ajusta el tamaño del contenedor según sea necesario */
+  /* max-width: 600px;  */
+  /* Ejemplo de ancho máximo */
+  /* height: auto; */
+  /* height: 600px; */
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  transition: transform 3s ease; /* Suaviza la transformación de la imagen */
+}
+
+.cardContainer:hover .img {
+  transform: scale(1.3); /* Aumenta el tamaño de la imagen al hacer hover */
+}

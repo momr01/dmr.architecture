@@ -1,8 +1,10 @@
 .cardsContainer {
-    @apply flex gap-10 px-20;
+  @apply flex flex-col gap-10;
+  @apply xl:px-20 xl:flex-row;
 }
 
 .btnMore {
-    @apply bg-yellow-600 w-1/3 p-5 rounded-3xl text-lg;
-    background-color: rgb(var(--primary));
+  @apply bg-yellow-600 w-full p-5 text-lg;
+  @apply xl:w-1/3;
+  background-color: rgb(var(--primary));
 }

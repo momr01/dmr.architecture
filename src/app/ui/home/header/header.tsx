@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { logoCompleteWhite } from "../../../assets/img/logo/imgLogo";
+import {
+  logoCompleteBlackBorder,
+  logoCompleteWhite,
+} from "../../../assets/img/logo/imgLogo";
 import styles from "./header.module.css";
 import BurgerNav from "./burgerNav/burgerNav";
 
@@ -19,32 +23,66 @@ const navItems = [
   {
     id: 3,
     title: "Servicios",
-    href: "/",
+    href: "#services",
   },
   {
     id: 4,
     title: "Contacto",
-    href: "/",
+    href: "#contact",
   },
 ];
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        scrolled ? styles.headerScrolled : styles.headerTransparent
+      }`}
+    >
       <Link className={styles.logoLink} href={"/"}>
-        <Image src={logoCompleteWhite} alt="logo" width={100} />
+        <Image
+          src={scrolled ? logoCompleteBlackBorder : logoCompleteWhite}
+          alt="logo"
+          width={120}
+        />
       </Link>
-      <nav className={styles.nav}>
+      <nav
+        className={`${styles.nav} ${
+          scrolled ? styles.navBlack : styles.navWhite
+        }`}
+      >
         <div className={styles.itemsContainer}>
           {navItems.map((item) => (
-            <Link key={item.id} href={item.href}>
+            <Link
+              key={item.id}
+              href={item.href}
+              className="hover:underline hover:underline-offset-[10px]"
+            >
               {item.title}
             </Link>
           ))}
         </div>
       </nav>
       <div className={styles.burgerNav}>
-        <BurgerNav navItems={navItems} />
+        <BurgerNav navItems={navItems} scrolled={scrolled} />
       </div>
     </header>
   );

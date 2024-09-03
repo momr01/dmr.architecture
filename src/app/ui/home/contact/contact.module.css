@@ -1,0 +1,4 @@
+.partsContainer {
+  @apply flex flex-col justify-around gap-5;
+  @apply lg:flex-row;
+}

@@ -28,11 +28,11 @@ const servicesItems = [
 
 const Services = () => {
   return (
-    <section>
+    <section id="services">
       <h2>Servicios</h2>
-      <div className="flex gap-16">
+      <div className="flex gap-16 flex-col lg:flex-row lg:justify-center">
         {servicesItems.map((item) => (
-          <div key={item.id} className="w-96 flex gap-8 p-4 shadow-md">
+          <div key={item.id} className="lg:w-96 flex gap-8 p-4 shadow-md">
             <div>{item.icon}</div>
 
             <div>
