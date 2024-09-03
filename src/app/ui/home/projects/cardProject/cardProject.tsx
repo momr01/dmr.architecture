@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import styles from "./cardProject.module.css";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
-import { Project } from "@/app/interfaces/project";
+import { Project } from "@/interfaces/project";
 import Lightbox from "yet-another-react-lightbox";
 import {
   Slideshow,
