@@ -7,9 +7,9 @@ import {
   imgCarousel1,
   imgCarousel2,
   imgCarousel3,
-} from "../../../assets/img/carousel/imgCarousel";
+} from "../../../../assets/img/carousel/imgCarousel";
 import { FaWhatsapp } from "react-icons/fa";
-import ContactBtn from "@/app/components/contactBtn/contactBtn";
+import ContactBtn from "@/components/contactBtn/contactBtn";
 import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
 

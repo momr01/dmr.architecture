@@ -1,3 +1,4 @@
 .icon {
-    color: rgb(var(--primary));
+  /* color: rgb(var(--primary)); */
+  @apply text-black;
 }

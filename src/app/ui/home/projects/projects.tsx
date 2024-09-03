@@ -1,11 +1,5 @@
 import React from "react";
 import styles from "./projects.module.css";
-import Image from "next/image";
-import {
-  imgCarousel1,
-  imgCarousel2,
-  imgCarousel3,
-} from "../../../assets/img/carousel/imgCarousel";
 import CardProject from "./cardProject/cardProject";
 import {
   gargantini01,
@@ -17,7 +11,7 @@ import {
   showroom02,
   showroom03,
   showroom04,
-} from "@/app/assets/img/projects/imgProjects";
+} from "@/assets/img/projects/imgProjects";
 
 const projects = [
   {

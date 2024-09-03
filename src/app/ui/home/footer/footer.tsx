@@ -1,11 +1,14 @@
 import React from "react";
 import { Footer as FooterFBR } from "flowbite-react";
 import Image from "next/image";
-import { logoCompleteBlackBorder } from "@/app/assets/img/logo/imgLogo";
+import {
+  logoCompleteBlackBorder,
+  logoCompleteWhite,
+} from "@/assets/img/logo/imgLogo";
 
 const Footer = () => {
   return (
-    <FooterFBR container className="bg-primary">
+    <FooterFBR container className="bg-black">
       <div className="w-full text-center mb-24 lg:mb-10">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           {/* <FooterFBR.Brand
@@ -14,7 +17,14 @@ const Footer = () => {
             alt="Flowbite Logo"
             name="Flowbite"
           /> */}
-          <Image src={logoCompleteBlackBorder} alt="logo" width={150} />
+          <div className="flex w-full justify-center md:justify-start">
+            <Image
+              src={logoCompleteWhite}
+              alt="logo"
+              className="w-[100px] md:w-[150px]"
+            />
+          </div>
+
           {/* <FooterFBR.LinkGroup>
             <FooterFBR.Link href="#">About</FooterFBR.Link>
             <FooterFBR.Link href="#">Privacy Policy</FooterFBR.Link>
@@ -23,7 +33,14 @@ const Footer = () => {
           </FooterFBR.LinkGroup> */}
         </div>
         <FooterFBR.Divider />
-        <FooterFBR.Copyright href="#" by="MOMR™" year={2024} />
+
+        <FooterFBR.Copyright
+          href="#"
+          by="- Todos los derechos reservados."
+          year={2024}
+          className="text-white"
+        />
+        <FooterFBR.Title title="Desarrollado por MOMR™" className="mt-2" />
       </div>
     </FooterFBR>
   );

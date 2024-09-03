@@ -11,7 +11,9 @@
 
 .cardContainer {
   @apply overflow-hidden relative cursor-pointer flex justify-center items-center h-[500px] w-full max-w-[600px];
+  @apply md:h-[700px];
   @apply lg:h-[600px];
+  @apply 2xl:h-[700px];
   /* width: 100%;  */
   /* Ajusta el tamaño del contenedor según sea necesario */
   /* max-width: 600px;  */

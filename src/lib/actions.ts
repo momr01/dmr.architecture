@@ -2,7 +2,7 @@ export const sendContactForm = async (prevState: any, formData: FormData) => {
   const { name, email, phone, message } = Object.fromEntries(formData);
 
   try {
-    //console.log(`${name} -  ${email}  - ${phone}  -  ${message}`);
+    console.log(`${name} -  ${email}  - ${phone}  -  ${message}`);
     // await signIn("credentials", { username, password });
     if (
       name.toString().length <= 5 ||

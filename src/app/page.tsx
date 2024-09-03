@@ -6,7 +6,6 @@ import Projects from "./ui/home/projects/projects";
 import Contact from "./ui/home/contact/contact";
 import Footer from "./ui/home/footer/footer";
 import Services from "./ui/home/services/services";
-import ContactBtn from "./components/contactBtn/contactBtn";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import BtnWhatsapp from "./ui/home/btnWhatsapp/btnWhatsapp";
 import BtnInstagram from "./ui/home/btnInstagram/btnInstagram";
@@ -62,14 +61,14 @@ export default function Home() {
       {/* <div className="fixed z-20 text-orange-500 bottom-1/2 right-10  ">
         INSTA
       </div> */}
-      <Header />
+      {/* <Header /> */}
       <HomeCarousel />
       <About />
       <Projects />
       <Services />
       <Contact />
 
-      <Footer />
+      {/* s */}
     </>
   );
 }
