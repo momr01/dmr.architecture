@@ -1,5 +1,5 @@
 "use client"
-import { Carousel } from "flowbite-react";
+import { Carousel, CustomFlowbiteTheme } from "flowbite-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import styles from "./carousel.module.css";
@@ -9,9 +9,11 @@ import {
   imgCarousel3,
 } from "../../../../assets/img/carousel/imgCarousel";
 import { FaWhatsapp } from "react-icons/fa";
-import ContactBtn from "@/components/contactBtn/contactBtn";
 import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
+import { customThemeCarousel } from "./customTheme";
+
+
 
 const HomeCarousel = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -38,6 +40,7 @@ const HomeCarousel = () => {
         slide={false}
         leftControl={" "}
         rightControl={" "}
+        theme={customThemeCarousel}
       >
         <div
           style={{

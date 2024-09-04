@@ -1,6 +1,6 @@
 .container {
   @apply fixed z-50 w-1/2 h-20 bottom-0 bg-gray-500 p-2 cursor-pointer flex flex-col justify-center border-r text-white;
-  @apply lg:z-10 lg:w-auto lg:h-auto lg:bottom-1/2 lg:right-10 lg:bg-gray-800 lg:rounded-xl lg:hover:bg-white lg:hover:text-gray-800 transition duration-300;
+  @apply lg:z-10 lg:w-auto lg:h-auto lg:bottom-1/2 lg:right-10 lg:bg-gray-800 lg:rounded-xl lg:hover:bg-primary lg:hover:text-gray-800 transition duration-300;
   @apply lg:border-none;
 }
 

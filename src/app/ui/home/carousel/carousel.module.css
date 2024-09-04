@@ -1,4 +1,4 @@
 .container {
-    @apply h-dvh bg-black;
+    @apply h-dvh;
 }
 

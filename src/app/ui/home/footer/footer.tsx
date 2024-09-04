@@ -1,14 +1,15 @@
 import React from "react";
-import { Footer as FooterFBR } from "flowbite-react";
+import { CustomFlowbiteTheme, Footer as FooterFBR } from "flowbite-react";
 import Image from "next/image";
 import {
   logoCompleteBlackBorder,
   logoCompleteWhite,
 } from "@/assets/img/logo/imgLogo";
+import { customThemeFooter } from "./customTheme";
 
 const Footer = () => {
   return (
-    <FooterFBR container className="bg-black">
+    <FooterFBR container className="bg-black" theme={customThemeFooter}>
       <div className="w-full text-center mb-24 lg:mb-10">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           {/* <FooterFBR.Brand

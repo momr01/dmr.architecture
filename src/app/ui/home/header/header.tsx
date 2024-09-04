@@ -37,7 +37,7 @@ const navItems = [
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isProjectsPage = pathname.includes("projects");
+  const isProjectsPage = pathname.includes("proyectos");
 
   //console.log(pathname);
 
@@ -64,9 +64,27 @@ const Header = () => {
       }`}
     >
       <Link className={styles.logoLink} href={"/"}>
-        <Image src={isProjectsPage ? scrolled ? logoCompleteWhite : logoCompleteBlack : logoCompleteWhite} alt="logo" width={120} />
+        <Image
+          src={
+            isProjectsPage
+              ? scrolled
+                ? logoCompleteWhite
+                : logoCompleteBlack
+              : logoCompleteWhite
+          }
+          alt="logo"
+          width={120}
+        />
       </Link>
-      <nav className={`${styles.nav} ${isProjectsPage ? scrolled ? styles.navWhite : styles.navBlack : styles.navWhite} `}>
+      <nav
+        className={`${styles.nav} ${
+          isProjectsPage
+            ? scrolled
+              ? styles.navWhite
+              : styles.navBlack
+            : styles.navWhite
+        } `}
+      >
         <div className={styles.itemsContainer}>
           {navItems.map((item) => (
             <Link
@@ -80,7 +98,11 @@ const Header = () => {
         </div>
       </nav>
       <div className={styles.burgerNav}>
-        <BurgerNav navItems={navItems} isProjectsPage={isProjectsPage} scrolled={scrolled} />
+        <BurgerNav
+          navItems={navItems}
+          isProjectsPage={isProjectsPage}
+          scrolled={scrolled}
+        />
       </div>
     </header>
   );

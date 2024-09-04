@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import styles from "./projects.module.css";
 import CardProject from "./cardProject/cardProject";
@@ -12,6 +14,7 @@ import {
   showroom03,
   showroom04,
 } from "@/assets/img/projects/imgProjects";
+import { redirect, useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -35,6 +38,12 @@ const projects = [
 ];
 
 const Projects = () => {
+  const router = useRouter();
+
+  const handleNewPage = () => {
+    router.push("/proyectos");
+   // redirect("/proyectos");
+  };
   return (
     <section id="projects">
       <h2>Proyectos</h2>
@@ -46,7 +55,9 @@ const Projects = () => {
           ))}
       </div>
       <div className="flex justify-center mt-10">
-        <button className={styles.btnMore}>Ver más</button>
+        <button className={styles.btnMore} onClick={handleNewPage}>
+          Ver más
+        </button>
       </div>
     </section>
   );
