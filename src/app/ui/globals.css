@@ -37,12 +37,15 @@ h2 {
 }
 
 section {
-  @apply p-10;
-  @apply lg:px-8 lg:py-28;
-  @apply 2xl:px-96 2xl:py-28;
+  /* @apply p-10; */
+  @apply px-10 pt-28;
+  @apply lg:py-28;
+  @apply 2xl:py-28;
+  @apply containerBase;
 }
 
-/* styles.css */
-.custom-focus-button:focus {
-  @apply ring-4 ring-blue-300 outline-none ring-opacity-50 !important;
+.containerBase {
+  @apply md:px-10;
+  @apply lg:px-20;
+  @apply 2xl:px-96;
 }

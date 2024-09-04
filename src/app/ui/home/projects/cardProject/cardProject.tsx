@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import styles from "./cardProject.module.css";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
-import { Project } from "@/interfaces/project";
+import { IProject } from "@/interfaces/iproject";
 import Lightbox from "yet-another-react-lightbox";
 import {
   Slideshow,
@@ -19,7 +19,7 @@ import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-const CardProject = ({ el, index }: { el: Project; index: number }) => {
+const CardProject = ({ el, index }: { el: IProject; index: number }) => {
   const [open, setOpen] = useState(false);
 
   const { ref, inView } = useInView({

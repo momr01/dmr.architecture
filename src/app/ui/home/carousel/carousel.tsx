@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Carousel, CustomFlowbiteTheme } from "flowbite-react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -13,8 +13,6 @@ import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
 import { customThemeCarousel } from "./customTheme";
 
-
-
 const HomeCarousel = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -27,17 +25,66 @@ const HomeCarousel = () => {
     opacity: isMounted ? 1 : 0,
     // config: { tension: 200, friction: 20 },
     config: { tension: 50, friction: 20 },
+    //loop: { reverse: true },
   });
 
+  const titleBgShow = useSpring({
+   // transform: isMounted ? "translateY(0%)" : "translateY(100%)",
+    opacity: isMounted ? 1 : 0,
+    // config: { tension: 200, friction: 20 },
+    config: { tension: 50, friction: 20 },
+    loop: { reverse: true },
+  });
 
   const phoneNumber = "+5492613016290";
   const defaultMessage = "Hola, me gustaría obtener más información.";
 
   return (
     <div className={styles.container}>
+      <animated.div
+        style={slideUp}
+        className="absolute z-10 top-1/4 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-auto
+        lg:bg-black lg:bg-opacity-60"
+      >
+        <div
+       // className="bg-gray-800 bg-opacity-70 w-full"
+        >
+          <h2
+            className="text-white font-bold text-[40px] tracking-wider lg:text-[70px] lg:font-normal mb-0"
+           // style={{ fontFamily: "CodecProBold, sans-serif" }}
+           // style={titleBgShow}
+          >
+            Bienvenidos
+          </h2>
+        </div>
+      </animated.div>
+
+      <div className="absolute z-10 bottom-40 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+        <Link
+          legacyBehavior
+          href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+            defaultMessage
+          )}`}
+          passHref
+        >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white px-5 py-2 rounded-2xl flex gap-3 hover:bg-gray-600 transition duration-300 group"
+          >
+            {" "}
+            <div className="text-black group-hover:text-white">Contactame</div>
+            <FaWhatsapp
+              size={24}
+              className="text-green-500 group-hover:text-white"
+            />
+          </a>
+        </Link>
+      </div>
+
       <Carousel
-        slideInterval={2000}
-        slide={false}
+        slideInterval={4000}
+        //slide={false}
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
@@ -50,17 +97,21 @@ const HomeCarousel = () => {
             overflow: "hidden",
           }}
         >
-          <animated.div 
-          style={slideUp}
-          className="absolute z-10 top-1/3 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-1/3">
-            <div 
+          {/* <animated.div
+            style={slideUp}
+            className="absolute z-10 top-1/3 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-1/3"
+          >
+            <div
             //className="bg-gray-800 bg-opacity-70"
             >
-              <h2 className="text-white lg:text-[70px]" style={{ fontFamily: "CodecProBold, sans-serif"}}>
+              <h2
+                className="text-white lg:text-[70px]"
+                style={{ fontFamily: "CodecProBold, sans-serif" }}
+              >
                 Bienvenidos
               </h2>
             </div>
-          </animated.div>
+          </animated.div> */}
 
           {/* <div className="absolute z-10 bottom-20 left-1/3 w-1/3 flex justify-center">
         <div className="bg-white px-5 py-2 rounded-2xl flex gap-3">
@@ -88,26 +139,31 @@ const HomeCarousel = () => {
               <FaWhatsapp size={24} className="text-green-400" />
             </button>
           </div> */}
-          <div className="absolute z-10 bottom-32 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+
+          {/* <div className="absolute z-10 bottom-32 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
             <Link
               legacyBehavior
               href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
                 defaultMessage
               )}`}
               passHref
-              
+             
             >
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white px-5 py-2 rounded-2xl flex gap-3 hover:bg-green-400 hover:text-white text-green-500 transition duration-300"
+                className="bg-white px-5 py-2 rounded-2xl flex gap-3 hover:bg-gray-600 transition duration-300 group"
               >
                 {" "}
-                <div className="text-black">Contactame</div>
-                <FaWhatsapp size={24} className="" />
+                <div className="text-black group-hover:text-white">
+                  Contactame
+                </div>
+                <FaWhatsapp size={24} className="text-green-500 group-hover:text-white" />
               </a>
             </Link>
-          </div>
+
+          
+          </div> */}
 
           <Image
             src={imgCarousel1}

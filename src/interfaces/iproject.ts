@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export interface Project {
+export interface IProject {
   id: number;
   title: string;
   isMain: boolean;

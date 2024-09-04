@@ -22,7 +22,7 @@ const ContactForm = () => {
   const [state, formAction] = useFormState(sendContactForm, undefined);
 
   return (
-    <div className="lg:w-1/3 mt-20 md:mx-20 lg:mt-0 lg:mx-0">
+    <div className="xl:w-1/3 mt-20 md:mx-10 lg:mt-0 lg:mx-0 lg:w-[50%]">
       <form action={formAction} className="flex flex-col gap-4">
         <div>
           <div className="mb-2 block">

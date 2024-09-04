@@ -39,16 +39,18 @@ const Services = () => {
   return (
     <section id="services">
       <h2>Servicios</h2>
-      <div className="flex gap-16 flex-col lg:flex-row lg:justify-center">
+      <div className="flex gap-16 flex-col lg:flex-row lg:justify-center lg:gap-5">
         {servicesItems.map((item) => (
-          <div key={item.id} className="lg:w-96 flex gap-8 p-4 shadow-md">
+          <div key={item.id} className="lg:w-96 flex gap-8 p-4 shadow-md lg:gap-2">
             {/* <div>{item.icon}</div> */}
             <div>
-              <Image src={item.icon} alt={item.title.toLowerCase()} width={300} />
+              <Image src={item.icon} alt={item.title.toLowerCase()} 
+             // width={300} 
+              className="w-[150px] lg:w-[300px]"  />
             </div>
 
             <div>
-              <h3 className="uppercase text-xl mb-4 font-bold">{item.title}</h3>
+              <h3 className="uppercase text-xl mb-4 font-bold lg:mb-2">{item.title}</h3>
               <p className="leading-9">{item.content}</p>
             </div>
           </div>
