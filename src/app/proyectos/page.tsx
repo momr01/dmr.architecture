@@ -1,11 +1,15 @@
 import React from "react";
+import ProjectsContainer from "../ui/projects/projectsContainer/projectsContainer";
 
 const ProjectsPage = () => {
-  return <section>
-    <div className="h-[1000px] pt-20">
-proyectos
-    </div>
+  return (
+    <section>
+      <div className="mt-20">
+        <h2>Proyectos</h2>
+        <ProjectsContainer />
+      </div>
     </section>
+  );
 };
 
 export default ProjectsPage;

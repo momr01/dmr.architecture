@@ -1,8 +1,8 @@
-.cardsContainer {
+/* .cardsContainer {
   @apply flex flex-col gap-10;
   @apply md:items-center md:px-32;
   @apply xl:flex-row;
-}
+} */
 
 .btnMore {
   @apply w-full p-5 text-lg bg-black text-white hover:bg-gray-500;

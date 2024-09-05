@@ -20,11 +20,23 @@ function BurgerNav({
 
   const router = useRouter();
 
+  // const handleRedirect = async (path: string) => {
+  //   // Redirige a la página principal con el ID específico
+  //   await router.push(`/${path}`);
+  //   setIsOpen(false);
+  // };
+
   const handleRedirect = (path: string) => {
-    // Redirige a la página principal con el ID específico
+   // const router = useRouter();
+  
+    // Inicia la redirección
     router.push(`/${path}`);
+  
+    // Cambia el estado justo después de la redirección
     setIsOpen(false);
   };
+
+
 
   return (
     <div className="relative">

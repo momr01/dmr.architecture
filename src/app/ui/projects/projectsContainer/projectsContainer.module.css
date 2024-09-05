@@ -1,0 +1,5 @@
+.cardsContainer {
+  @apply flex flex-col gap-10;
+  @apply md:items-center md:px-32;
+  @apply xl:flex-row;
+}
