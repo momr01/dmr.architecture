@@ -1,5 +1,11 @@
 .cardsContainer {
-  @apply flex flex-col gap-10;
-  @apply md:items-center md:px-32;
-  @apply xl:flex-row;
+  @apply grid grid-cols-1 gap-5;
+  /* @apply flex flex-col gap-10; */
+  @apply md:grid-cols-2;
+  @apply lg:grid-cols-3;
+  @apply xl:gap-16;
+  @apply 2xl:gap-20;
+  /* @apply md:items-center md:px-32;
+  @apply xl:flex-row; */
+
 }

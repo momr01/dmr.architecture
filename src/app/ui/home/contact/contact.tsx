@@ -5,7 +5,7 @@ import styles from "./contact.module.css";
 
 const Contact = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="mb-20 lg:mb-0">
       <h2>Contacto</h2>
       <div className={styles.partsContainer}>
         <ContactInfo />

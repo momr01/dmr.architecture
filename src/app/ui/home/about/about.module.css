@@ -1,8 +1,8 @@
 
-.titleSpan {
+.titleSpan, .contentSpan {
     color: rgb(var(--primary));
 }
 
 .content {
-    @apply text-lg text-center;
+    @apply text-lg text-center leading-8;
 }

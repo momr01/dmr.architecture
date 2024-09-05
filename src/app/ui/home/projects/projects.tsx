@@ -54,7 +54,7 @@ const Projects = () => {
             <CardProject key={el.id} el={el} index={index} />
           ))}
       </div> */}
-      <ProjectsContainer />
+      <ProjectsContainer limit={3} />
       <div className="flex justify-center mt-10">
         <button className={styles.btnMore} onClick={handleNewPage}>
           Ver más
