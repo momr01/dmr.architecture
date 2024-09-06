@@ -2,17 +2,6 @@
 
 import React from "react";
 import styles from "./projects.module.css";
-import {
-  gargantini01,
-  gargantini02,
-  ofCc01,
-  ofCc02,
-  ofCc03,
-  showroom01,
-  showroom02,
-  showroom03,
-  showroom04,
-} from "@/assets/img/projects/imgProjects";
 import { redirect, useRouter } from "next/navigation";
 import ProjectsContainer from "../../projects/projectsContainer/projectsContainer";
 
