@@ -13,7 +13,21 @@ export const sendContactForm = async (prevState: any, formData: FormData) => {
       return "Por favor, verifique los datos ingresados.";
     }
 
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
+    console.log(response);
+
+    if (response.ok) {
+      return "Mensaje enviado con éxito";
+    } else {
+      return "Error al enviar el mensaje";
+    }
   } catch (err: any) {
     if (err) {
       // console.log(err)
@@ -22,9 +36,12 @@ export const sendContactForm = async (prevState: any, formData: FormData) => {
 
       //   return "Wrong Credentials";
       // }
-      if (err?.type?.includes("CredentialsSignin")) {
-        return "Wrong Credentials";
-      }
+
+      // if (err?.type?.includes("CredentialsSignin")) {
+      //   return "Wrong Credentials";
+      // }
+
+      return "Error al enviar el mensaje";
     }
 
     throw err;

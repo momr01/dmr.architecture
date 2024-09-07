@@ -42,9 +42,14 @@ export default function Home() {
 
         </button>
       </div> */}
-      <BtnWhatsapp />
-      <BtnInstagram />
 
+
+
+      {/* <BtnWhatsapp />
+      <BtnInstagram /> */}
+
+     
+     
       {/* <div className="fixed z-50 lg:z-10 w-1/2 lg:w-auto h-20 lg:h-auto bottom-0 lg:bottom-1/2 lg:right-10 bg-gray-600 lg:bg-gray-800 p-2 lg:rounded-xl cursor-pointer">
         <div className="flex justify-center">
           <FaInstagram className="text-white text-3xl lg:text-2xl" />

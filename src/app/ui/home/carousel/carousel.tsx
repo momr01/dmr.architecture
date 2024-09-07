@@ -12,6 +12,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { useSpring, animated } from "@react-spring/web";
 import { customThemeCarousel } from "./customTheme";
+import BtnWhatsapp from "../btnWhatsapp/btnWhatsapp";
+import BtnInstagram from "../btnInstagram/btnInstagram";
 
 const HomeCarousel = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -61,17 +63,19 @@ const HomeCarousel = () => {
         </div>
       </animated.div> */}
 
-      <div className="absolute z-20 w-full h-full flex justify-center items-center">
+      <div className="absolute z-[70] w-full h-full flex justify-center items-center">
+        <BtnWhatsapp />
+        <BtnInstagram />
         <animated.div
           style={slideUp}
-          //  className="absolute z-10 top-1/4 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-auto
-          //  lg:bg-black lg:bg-opacity-60 "
+        
           className="p-11 lg:bg-black lg:bg-opacity-60 relative bottom-44 lg:bottom-20 xl:bottom-0"
         >
-          <h2 className="text-white font-bold text-[40px] tracking-wider md:text-[50px] lg:text-[60px] lg:font-normal 2xl:text-[100px] mb-0">
-            Bienvenidos
+          <h2 className="z-[70] text-white font-bold text-[40px] tracking-wider md:text-[50px] lg:text-[60px] lg:font-normal 2xl:text-[100px] mb-0">
+            Bienvenidos 
           </h2>
         </animated.div>
+        </div>
 
         {/* <animated.div
         style={slideUp}
@@ -84,9 +88,9 @@ const HomeCarousel = () => {
           </h2>
         </div>
       </animated.div> */}
-      </div>
+     
 
-      <div className="absolute z-10 bottom-40 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+      <div className="absolute z-[100] bottom-40 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
         <Link
           legacyBehavior
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -115,6 +119,7 @@ const HomeCarousel = () => {
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
+        className="z-[60]"
       >
         <div
           style={{

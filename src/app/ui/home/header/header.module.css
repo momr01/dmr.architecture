@@ -1,5 +1,5 @@
 .header {
-  @apply flex items-center justify-between w-full z-50 fixed h-24;
+  @apply flex items-center justify-between w-full z-[100] fixed h-24;
   /* @apply md:px-10;
   @apply lg:px-20;
   @apply 2xl:px-96; */
