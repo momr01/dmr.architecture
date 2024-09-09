@@ -1,0 +1,23 @@
+.containerBlack {
+  @apply bg-black;
+}
+
+.containerWhite {
+  @apply bg-white;
+}
+
+.borderWhite {
+  @apply border-white;
+}
+
+.borderBlack {
+  @apply border-black;
+}
+
+.textBlack {
+  @apply text-black;
+}
+
+.textWhite {
+  @apply text-white;
+}

@@ -33,20 +33,25 @@ html {
 }
 
 h2 {
-  @apply text-3xl mb-10 text-center;
+  @apply text-3xl mb-10 text-center uppercase;
   @apply md:mb-14;
 }
 
 section {
   /* @apply p-10; */
-  @apply px-10 pt-28;
-  @apply lg:py-28;
-  @apply 2xl:py-28;
+  @apply px-10 pt-32;
+  @apply lg:py-32;
+  @apply 2xl:py-32;
   @apply containerBase;
+  @apply bg-white;
 }
 
 .containerBase {
   @apply md:px-10;
   @apply lg:px-20;
   @apply 2xl:px-96;
+}
+
+.borderUnderTitle {
+  @apply border-t-4 border-primary pt-14;
 }

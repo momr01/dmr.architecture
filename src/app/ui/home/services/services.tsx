@@ -39,9 +39,9 @@ const Services = () => {
   return (
     <section id="services">
       <h2>Servicios</h2>
-      <div className="flex gap-16 flex-col lg:flex-row lg:justify-center lg:gap-5">
+      <div className="flex gap-16 flex-col lg:flex-row lg:justify-center lg:gap-5 border-t-4 border-primary pt-14">
         {servicesItems.map((item) => (
-          <div key={item.id} className="lg:w-96 flex gap-8 p-4 shadow-md lg:gap-2">
+          <div key={item.id} className="lg:w-96 flex gap-8 p-4 shadow-md lg:gap-2 bg-gray-200 rounded-lg">
             {/* <div>{item.icon}</div> */}
             <div>
               <Image src={item.icon} alt={item.title.toLowerCase()} 

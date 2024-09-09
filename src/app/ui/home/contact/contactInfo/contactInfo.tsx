@@ -5,16 +5,16 @@ import { RiInstagramFill } from "react-icons/ri";
 import styles from "./contactInfo.module.css";
 
 const contactItems = [
-  {
-    id: 1,
-    icon: <HiPhone size={25} />,
-    content: "+54 261 6062872",
-  },
-  {
-    id: 2,
-    icon: <MdMarkEmailRead size={25} />,
-    content: "dani_emr27@hotmail.com",
-  },
+  // {
+  //   id: 1,
+  //   icon: <HiPhone size={25} />,
+  //   content: "+54 261 6062872",
+  // },
+  // {
+  //   id: 2,
+  //   icon: <MdMarkEmailRead size={25} />,
+  //   content: "dani_emr27@hotmail.com",
+  // },
   {
     id: 3,
     icon: <RiInstagramFill size={25} />,

@@ -18,17 +18,22 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { usePathname } from "next/navigation";
 
-const CardProject = ({ el, index }: { el: IProject; index: number }) => {
+const CardProject = ({ el, delay }: { el: IProject; delay: number }) => {
+  const pathname = usePathname();
+  const isProjectsPage = pathname.includes("proyectos");
+
   const [open, setOpen] = useState(false);
 
   const { ref, inView } = useInView({
     triggerOnce: true, // Solo dispara la animación una vez
-    threshold: 0.2, // El porcentaje del elemento visible para activar la animación
+    threshold: 0.05, // El porcentaje del elemento visible para activar la animación
   });
 
   // Define un retraso basado en el índice del elemento
-  const delay = index * 500; // 200 ms por cada índice
+  //const delay = index * 500; // 200 ms por cada índice
+  // const delay = 200;
 
   // Usa useSpring para definir la animación
   const props = useSpring({
@@ -38,10 +43,21 @@ const CardProject = ({ el, index }: { el: IProject; index: number }) => {
     delay,
   });
 
+  // Divide el texto en palabras
+  const words = el.title.split(" ");
+
+  // Asegúrate de que hay al menos dos palabras
+  const firstPart = words.slice(0, 1).join(" ");
+  const secondPart = words.slice(1).join(" ");
+
   return (
     <>
       <animated.div
-        className={styles.cardContainer}
+        className={`${styles.cardContainer} ${
+          isProjectsPage
+            ? styles.cardContainerWhite
+            : styles.cardContainerPrimary
+        }`}
         ref={ref}
         style={props}
         onClick={() => setOpen(true)}
@@ -56,7 +72,14 @@ const CardProject = ({ el, index }: { el: IProject; index: number }) => {
           className={styles.img}
         />
         <h3 className="absolute z-40 text-white text-2xl text-center uppercase px-10 font-semibold tracking-wider">
-          {el.title}
+          {/* {el.title} */}
+
+          {/* Las dos primeras palabras */}
+          <span>{firstPart}</span>
+          {/* Salto de línea */}
+          <br />
+          {/* El resto del texto */}
+          <span>{secondPart}</span>
         </h3>
       </animated.div>
 

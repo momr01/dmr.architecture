@@ -14,12 +14,21 @@
   @apply md:h-[700px];
   @apply lg:h-[600px];
   @apply 2xl:h-[700px];
+
   /* width: 100%;  */
   /* Ajusta el tamaño del contenedor según sea necesario */
   /* max-width: 600px;  */
   /* Ejemplo de ancho máximo */
   /* height: auto; */
   /* height: 600px; */
+}
+
+.cardContainerWhite {
+  @apply border-white border-4;
+}
+
+.cardContainerPrimary {
+  @apply border-primary border-8;
 }
 
 .img {

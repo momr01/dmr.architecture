@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Header from "./ui/home/header/header";
 import HomeCarousel from "./ui/home/carousel/carousel";
@@ -9,8 +10,28 @@ import Services from "./ui/home/services/services";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import BtnWhatsapp from "./ui/home/btnWhatsapp/btnWhatsapp";
 import BtnInstagram from "./ui/home/btnInstagram/btnInstagram";
+import { logoCompleteWhite } from "@/assets/img/logo/imgLogo";
+import { useSpring, animated } from "@react-spring/web";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const slideUp = useSpring({
+    // transform: isMounted ? "translateY(0%)" : "translateY(100%)",
+    transform: isMounted
+      ? "translate(-50%, -50%)" // Aplica el -translate-x-1/2 y sube desde abajo
+      : "translate(-50%, 100%)", // Sale por la parte inferior
+    opacity: isMounted ? 1 : 0,
+    // config: { tension: 200, friction: 20 },
+    config: { tension: 50, friction: 20 },
+    //loop: { reverse: true },
+  });
+
   return (
     <>
       {/* <ContactBtn
@@ -43,13 +64,10 @@ export default function Home() {
         </button>
       </div> */}
 
-
-
       {/* <BtnWhatsapp />
       <BtnInstagram /> */}
+      {/* <BtnInstagram /> */}
 
-     
-     
       {/* <div className="fixed z-50 lg:z-10 w-1/2 lg:w-auto h-20 lg:h-auto bottom-0 lg:bottom-1/2 lg:right-10 bg-gray-600 lg:bg-gray-800 p-2 lg:rounded-xl cursor-pointer">
         <div className="flex justify-center">
           <FaInstagram className="text-white text-3xl lg:text-2xl" />
@@ -67,6 +85,26 @@ export default function Home() {
         INSTA
       </div> */}
       {/* <Header /> */}
+
+      <BtnWhatsapp />
+      <BtnInstagram />
+      {/* <animated.div
+        style={slideUp}
+       
+        className="p-11  z-10
+       
+        absolute top-1/3 lg:top-1/2 left-1/2 w-[70%] md:w-auto"
+      > */}
+      {/* <h2 className="hidden text-white font-bold text-[40px] tracking-wider md:text-[50px] lg:text-[60px] lg:font-normal 2xl:text-[100px] mb-0">
+            Bienvenidos
+          </h2> */}
+      {/* <Image
+        src={logoCompleteWhite}
+        alt="logo"
+        className="md:w-[200px] lg:w-[300px]"
+      /> */}
+      {/* </animated.div> */}
+
       <HomeCarousel />
       <About />
       <Projects />

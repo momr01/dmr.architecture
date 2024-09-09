@@ -14,6 +14,25 @@ import { useSpring, animated } from "@react-spring/web";
 import { customThemeCarousel } from "./customTheme";
 import BtnWhatsapp from "../btnWhatsapp/btnWhatsapp";
 import BtnInstagram from "../btnInstagram/btnInstagram";
+import { logoCompleteWhite } from "@/assets/img/logo/imgLogo";
+
+const imgElements = [
+  {
+    id: 1,
+    img: imgCarousel1,
+    objectFit: "cover",
+  },
+  {
+    id: 2,
+    img: imgCarousel2,
+    objectFit: "fill",
+  },
+  {
+    id: 3,
+    img: imgCarousel3,
+    objectFit: "cover",
+  },
+];
 
 const HomeCarousel = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -63,21 +82,22 @@ const HomeCarousel = () => {
         </div>
       </animated.div> */}
 
-      <div className="absolute z-[70] w-full h-full flex justify-center items-center">
+      {/* <div className="absolute w-full h-[95%] flex justify-center items-center bg-transparent z-10">
         <BtnWhatsapp />
         <BtnInstagram />
         <animated.div
           style={slideUp}
-        
-          className="p-11 lg:bg-black lg:bg-opacity-60 relative bottom-44 lg:bottom-20 xl:bottom-0"
+          className="p-11 
+       
+          relative bottom-44 lg:bottom-20 xl:bottom-0"
+         
         >
-          <h2 className="z-[70] text-white font-bold text-[40px] tracking-wider md:text-[50px] lg:text-[60px] lg:font-normal 2xl:text-[100px] mb-0">
-            Bienvenidos 
-          </h2>
+         
+          <Image src={logoCompleteWhite} alt="logo" width={300} />
         </animated.div>
-        </div>
+      </div> */}
 
-        {/* <animated.div
+      {/* <animated.div
         style={slideUp}
         className="absolute z-10 top-1/4 lg:top-1/2 lg:left-1/3 p-11 w-full lg:w-auto
         lg:bg-black lg:bg-opacity-60 "
@@ -88,9 +108,8 @@ const HomeCarousel = () => {
           </h2>
         </div>
       </animated.div> */}
-     
 
-      <div className="absolute z-[100] bottom-40 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
+      {/* <div className="absolute bottom-40 lg:bottom-20 left-1/3 w-1/3 flex justify-center">
         <Link
           legacyBehavior
           href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -111,7 +130,7 @@ const HomeCarousel = () => {
             />
           </a>
         </Link>
-      </div>
+      </div> */}
 
       <Carousel
         slideInterval={4000}
@@ -119,15 +138,16 @@ const HomeCarousel = () => {
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
-        className="z-[60]"
+        className="h-[80vh] lg:h-[100vh]"
       >
         <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100vh",
-            overflow: "hidden",
-          }}
+          className="relative w-full overflow-hidden h-[80vh] lg:h-[100vh]"
+          // style={{
+          //   position: "relative",
+          //   width: "100%",
+          //   height: "100vh",
+          //   overflow: "hidden",
+          // }}
         >
           {/* <animated.div
             style={slideUp}
@@ -202,24 +222,29 @@ const HomeCarousel = () => {
             alt="Descripción de la imagen"
             layout="fill"
             objectFit="cover"
+            // objectFit="contain"
+            // objectPosition="center"
             objectPosition="center"
           />
+          {/* <div className="absolute inset-0 bg-black opacity-40"></div> */}
         </div>
         <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100vh",
-            overflow: "hidden",
-          }}
+          className="relative w-full overflow-hidden h-[80vh] lg:h-[100vh]"
+          // style={{
+          //   position: "relative",
+          //   width: "100%",
+          //   height: "100vh",
+          //   overflow: "hidden",
+          // }}
         >
           <Image
             src={imgCarousel2}
             alt="Descripción de la imagen"
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             objectPosition="center"
           />
+          {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
         </div>
         <div
           style={{

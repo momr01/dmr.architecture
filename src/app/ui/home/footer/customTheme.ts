@@ -6,4 +6,5 @@ const customThemeFooter: CustomFlowbiteTheme["footer"] = {
   },
 };
 
+
 export { customThemeFooter };

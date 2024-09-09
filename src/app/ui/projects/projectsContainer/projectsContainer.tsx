@@ -1,17 +1,29 @@
+"use client";
+
 import React from "react";
 import styles from "./projectsContainer.module.css";
 import { projects } from "@/data/projectsItems";
 import CardProject from "../cardProject/cardProject";
+import { usePathname } from "next/navigation";
 
-const ProjectsContainer = ({limit} : {limit: number}) => {
+const ProjectsContainer = ({ limit }: { limit: number }) => {
+  const pathname = usePathname();
+  const isProjectsPage = pathname.includes("proyectos");
+
   return (
-    <div className={styles.cardsContainer}>
+    <div
+      className={`${styles.cardsContainer} ${
+        !isProjectsPage && styles.borderUnderTitle
+      }`}
+    >
       {projects
         //.filter((project) => project.isMain)
         .slice(0, limit)
-        .map((el, index) => (
-          <CardProject key={el.id} el={el} index={index} />
-        ))}
+        .map((el, index) => {
+          const delay = (index % 3) * 500; // Se reinicia cada 3 elementos
+
+          return <CardProject key={el.id} el={el} delay={delay} />;
+        })}
     </div>
   );
 };

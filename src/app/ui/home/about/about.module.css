@@ -1,8 +1,30 @@
+.title {
+  @apply normal-case;
+}
 
-.titleSpan, .contentSpan {
-    color: rgb(var(--primary));
+.titleSpanColor,
+.contentSpan {
+  /* color: rgb(var(--primary)); */
+  @apply text-primary;
+}
+
+.titleSpanColor,
+.titleSpan {
+  @apply uppercase !important;
+}
+
+.titleSpanColor,
+.contentSpan {
+  @apply font-bold;
+}
+
+.contentContainer {
+  @apply relative;
 }
 
 .content {
-    @apply text-lg text-center leading-8;
+  @apply text-lg text-justify leading-8 py-10;
+  /* @apply border-t-2 border-primary ; */
+  @apply before:content-[''] before:absolute before:top-0 before:left-0 before:w-1/2 before:h-1 before:bg-primary;
+  @apply after:content-[''] after:absolute after:bottom-0 after:right-0 after:w-1/2 after:h-1 after:bg-primary;
 }

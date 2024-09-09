@@ -1,16 +1,29 @@
+"use client";
 import React from "react";
 import { CustomFlowbiteTheme, Footer as FooterFBR } from "flowbite-react";
 import Image from "next/image";
 import {
+  logoCompleteBlack,
   logoCompleteBlackBorder,
   logoCompleteWhite,
 } from "@/assets/img/logo/imgLogo";
 import { customThemeFooter } from "./customTheme";
+import { usePathname } from "next/navigation";
+import styles from "./footer.module.css";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isProjectsPage = pathname.includes("proyectos");
+
   return (
-    <FooterFBR container className="bg-black" theme={customThemeFooter}>
-      <div className="w-full text-center mb-24 lg:mb-10">
+    <FooterFBR
+      container
+      className={`${
+        isProjectsPage ? styles.containerWhite : styles.containerBlack
+      }`}
+      theme={customThemeFooter}
+    >
+      <div className={`w-full text-center ${isProjectsPage ? 'mb-5' : 'mb-24'} lg:mb-10`}>
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           {/* <FooterFBR.Brand
             href="https://flowbite.com"
@@ -20,7 +33,7 @@ const Footer = () => {
           /> */}
           <div className="flex w-full justify-center md:justify-start">
             <Image
-              src={logoCompleteWhite}
+              src={isProjectsPage ? logoCompleteBlack : logoCompleteWhite}
               alt="logo"
               className="w-[100px] md:w-[150px]"
             />
@@ -33,13 +46,15 @@ const Footer = () => {
             <FooterFBR.Link href="#">Contact</FooterFBR.Link>
           </FooterFBR.LinkGroup> */}
         </div>
-        <FooterFBR.Divider />
+        <FooterFBR.Divider
+          className={isProjectsPage ? styles.borderBlack : styles.borderWhite}
+        />
 
         <FooterFBR.Copyright
           href="#"
           by="- Todos los derechos reservados."
           year={2024}
-          className="text-white"
+          className={isProjectsPage ? styles.textBlack : styles.textWhite}
         />
         <FooterFBR.Title title="Desarrollado por MOMR™" className="mt-2" />
       </div>

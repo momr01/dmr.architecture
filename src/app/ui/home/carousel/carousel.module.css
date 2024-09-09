@@ -1,4 +1,3 @@
 .container {
-    @apply h-dvh;
+  @apply h-auto;
 }
-

@@ -4,47 +4,48 @@ import styles from "./about.module.css";
 const About = () => {
   return (
     <section id="about">
-      <h2>
-        Nos ocupamos de todo para que <br />
-        <span className={styles.titleSpan}>disfrutes de tu nuevo hogar</span>
+      <h2 className={styles.title}>
+        En <span className={styles.titleSpan}>dmr</span> tus{" "}
+        <span className={styles.titleSpan}>ideas</span> y{" "}
+        <span className={styles.titleSpan}>sueños</span>
+        <br />
+        se convierten en{" "}
+        <span className={styles.titleSpanColor}>proyectos reales</span>
       </h2>
 
-      {/* <p className={styles.content}>
-        Construimos casas llave en mano, ocupándonos de todas las etapas del
-        proyecto, entregando casas listas para mudarse y diseñadas a medida de
-        cada cliente.
-      </p> */}
-
-      <div className="flex flex-col gap-10">
-        <p className={styles.content}>
+      <div className={styles.contentContainer}>
+      <div className={styles.content}>
+        <p>
           La experiencia me ha permitido desarrollar diferentes puestos de
-          responsabilidad, de los cuales puedo destacar la infoarquitectura,{" "}
-          <span className={styles.contentSpan}>la visualización 3D</span> y el
+          responsabilidad, de los cuales puedo destacar la infoarquitectura, la{" "}
+          <span className={styles.contentSpan}>visualización 3D</span> y el
           desarrollo de soluciones gráficas para promociones inmobiliarias.
         </p>
-
-        <p className={styles.content}>
+        <p>
           Realizo de forma precisa y específica el armado de documentación
-          técnica y gráfica para darle forma a un proyecto.
+          técnica y gráfica para darle forma a un{" "}
+          <span className={styles.contentSpan}>proyecto</span>.
         </p>
-
-        <p className={styles.content}>
+        <p>
           Planifico, diseño y construyo elementos, espacios que no sólo sean
           estéticamente agradables, sino también funcionales y seguros.
         </p>
-
-        <p className={styles.content}>
+        <p>
           Mi diverso portafolio de proyectos abarca diseños residenciales de
           viviendas unifamiliares, condominios de casas, edificios de
-          departamentos, oficinas, locales comerciales, showrooms, entre otros.{" "}
+          departamentos, oficinas, locales comerciales, showrooms, entre otros.
         </p>
-
-        <p className={styles.content}>
-          Abordando desafíos arquitectónicos con creatividad y precisión, cada
-          proyecto es una oportunidad para materializar los sueños de mis
-          clientes, gracias a una atención personalizada.
+        <p>
+          Abordando{" "}
+          <span className={styles.contentSpan}>desafíos arquitectónicos</span>{" "}
+          con creatividad y precisión, cada proyecto es una oportunidad para
+          materializar los sueños de mis clientes, gracias a una atención
+          personalizada.
         </p>
       </div>
+      </div>
+
+    
     </section>
   );
 };

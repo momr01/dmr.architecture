@@ -1,5 +1,7 @@
 "use client";
+import { logoWhite } from "@/assets/img/logo/imgLogo";
 import { INavItem } from "@/interfaces/inavItem";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -27,37 +29,35 @@ function BurgerNav({
   // };
 
   const handleRedirect = (path: string) => {
-   // const router = useRouter();
-  
+    // const router = useRouter();
+
     // Inicia la redirección
     router.push(`/${path}`);
-  
+
     // Cambia el estado justo después de la redirección
     setIsOpen(false);
   };
-
-
 
   return (
     <div className="relative">
       <button onClick={toggleMenu} className="focus:outline-none z-10 px-8">
         <div
           className={`w-8 h-1 ${
-            isProjectsPage ? (scrolled ? "bg-white" : "bg-black") : "bg-white"
+            isProjectsPage ? "bg-black" : "bg-white"
           } mb-1 transform transition duration-300 ease-in-out ${
             isOpen ? "rotate-45 translate-y-2" : ""
           }`}
         ></div>
         <div
           className={`w-8 h-1 ${
-            isProjectsPage ? (scrolled ? "bg-white" : "bg-black") : "bg-white"
+            isProjectsPage ? "bg-black" : "bg-white"
           } mb-1 transition duration-300 ease-in-out ${
             isOpen ? "opacity-0" : ""
           }`}
         ></div>
         <div
           className={`w-8 h-1 ${
-            isProjectsPage ? (scrolled ? "bg-white" : "bg-black") : "bg-white"
+            isProjectsPage ? "bg-black" : "bg-white"
           } transition duration-300 ease-in-out ${
             isOpen ? "-rotate-45 -translate-y-2" : ""
           }`}
@@ -74,11 +74,15 @@ function BurgerNav({
 
       {/* Menu */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transition-transform duration-300 transform ${
+        className={`fixed top-0 right-0 w-64 h-full bg-black shadow-lg transition-transform duration-300 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col items-center justify-center h-full">
+        <div className="w-[60%] mx-auto pt-10">
+        <Image src={logoWhite} alt="logo" />
+        </div>
+       
+        <ul className="flex flex-col items-center justify-start h-full mt-52">
           {navItems.map((item) => (
             <li key={item.id} className="mb-10">
               {/* <a 
@@ -89,7 +93,7 @@ function BurgerNav({
               </a> */}
               <button
                 onClick={() => handleRedirect(item.href)}
-                className="text-black text-xl"
+                className="text-white text-xl"
               >
                 {item.title}
               </button>

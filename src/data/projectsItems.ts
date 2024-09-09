@@ -44,9 +44,9 @@ import {
 const projects = [
   {
     id: 1,
-    title: "Diseño Showroom - DJI Agriculture",
+    title: "Proyecto Ottero",
     isMain: true,
-    images: [showroom1, showroom2, showroom3, showroom4],
+    images: [ottero1, ottero2, ottero3, ottero4, ottero5],
   },
   {
     id: 2,
@@ -56,15 +56,15 @@ const projects = [
   },
   {
     id: 3,
-    title: "Oficinas & Centro Comercial",
+    title: "Proyecto Oficinas & Centro Comercial",
     isMain: true,
     images: [ofCC1, ofCC2, ofCC3],
   },
   {
     id: 4,
-    title: "Proyecto Ottero",
+    title: "Diseño Showroom - DJI Agriculture",
     isMain: true,
-    images: [ottero1, ottero2, ottero3, ottero4, ottero5],
+    images: [showroom1, showroom2, showroom3, showroom4],
   },
   {
     id: 5,
@@ -72,23 +72,23 @@ const projects = [
     isMain: true,
     images: [vistalba1, vistalba2, vistalba3, vistalba4],
   },
-  {
-    id: 6,
-    title: "Proyecto Vistalba II",
-    isMain: true,
-    images: [vistalba2_1, vistalba2_2, vistalba2_3, vistalba2_4, vistalba2_5],
-  },
-  {
-    id: 7,
-    title: "Visualización Vivienda I",
-    isMain: true,
-    images: [vivienda1],
-  },
+  // {
+  //   id: 6,
+  //   title: "Proyecto Vistalba II",
+  //   isMain: true,
+  //   images: [vistalba2_1, vistalba2_2, vistalba2_3, vistalba2_4, vistalba2_5],
+  // },
+  // {
+  //   id: 7,
+  //   title: "Visualización Vivienda I",
+  //   isMain: true,
+  //   images: [vivienda1],
+  // },
   {
     id: 8,
-    title: "Visualización Vivienda II",
+    title: "Visualización Vivienda",
     isMain: true,
-    images: [vivienda2_1, vivienda2_2, vivienda2_3, vivienda2_4],
+    images: [vivienda1, vivienda2_1, vivienda2_2, vivienda2_3, vivienda2_4],
   },
 ];
 
