@@ -78,11 +78,11 @@ function BurgerNav({
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="w-[60%] mx-auto pt-10">
+        <div className="w-[60%] mx-auto py-10">
         <Image src={logoWhite} alt="logo" />
         </div>
        
-        <ul className="flex flex-col items-center justify-start h-full mt-52">
+        <ul className="flex flex-col items-center justify-start h-full mt-24">
           {navItems.map((item) => (
             <li key={item.id} className="mb-10">
               {/* <a 

@@ -32,7 +32,7 @@
 }
 
 .logoLink {
-  @apply font-semibold w-20 ml-7;
+  @apply font-semibold w-28 ml-7;
   @apply lg:w-80 lg:ml-0;
 }
 

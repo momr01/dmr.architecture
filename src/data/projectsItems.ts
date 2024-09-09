@@ -40,6 +40,7 @@ import {
   vivienda2_3,
   vivienda2_4,
 } from "@/assets/img/projects/vivienda2/imgVivienda2";
+import { eAndR1, eAndR2, eAndR3 } from "@/assets/img/projects/eandr/imgEandR";
 
 const projects = [
   {
@@ -89,6 +90,12 @@ const projects = [
     title: "Visualización Vivienda",
     isMain: true,
     images: [vivienda1, vivienda2_1, vivienda2_2, vivienda2_3, vivienda2_4],
+  },
+  {
+    id: 9,
+    title: "Proyecto E&R",
+    isMain: true,
+    images: [eAndR1, eAndR2, eAndR3],
   },
 ];
 

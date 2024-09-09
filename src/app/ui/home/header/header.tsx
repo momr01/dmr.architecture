@@ -44,6 +44,10 @@ const Header = () => {
   //console.log(pathname);
 
   useEffect(() => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    }
+
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 50) {
@@ -51,6 +55,7 @@ const Header = () => {
       } else {
         setScrolled(false);
       }
+      // console.log(offset);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -68,11 +73,11 @@ const Header = () => {
   // };
 
   const handleRedirect = (path: string) => {
-   // const router = useRouter();
-  
+    // const router = useRouter();
+
     // Inicia la redirección
     router.push(`/${path}`);
-  
+
     // Cambia el estado justo después de la redirección
     //setIsOpen(false);
   };
@@ -135,13 +140,13 @@ const Header = () => {
             //   {item.title}
             // </Link>
             <button
-            key={item.id}
-            onClick={() => handleRedirect(item.href)}
-           // href={item.href}
-            className="hover:underline hover:underline-offset-[10px]"
-          >
-            {item.title}
-          </button>
+              key={item.id}
+              onClick={() => handleRedirect(item.href)}
+              // href={item.href}
+              className="hover:underline hover:underline-offset-[10px]"
+            >
+              {item.title}
+            </button>
           ))}
         </div>
       </nav>
