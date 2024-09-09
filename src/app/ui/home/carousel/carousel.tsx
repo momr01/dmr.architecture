@@ -258,7 +258,7 @@ const HomeCarousel = () => {
             src={imgCarousel3}
             alt="Descripción de la imagen"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             objectPosition="center"
           />
         </div>
