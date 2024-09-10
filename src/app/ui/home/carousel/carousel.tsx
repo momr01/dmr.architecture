@@ -134,7 +134,7 @@ const HomeCarousel = () => {
 
       <Carousel
         slideInterval={4000}
-        slide={false}
+       // slide={false}
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}

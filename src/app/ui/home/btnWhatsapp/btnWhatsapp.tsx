@@ -4,7 +4,7 @@ import styles from "./btnWhatsapp.module.css";
 import Link from "next/link";
 
 const BtnWhatsapp = () => {
-  const phoneNumber = "+5492613016290";
+  const phoneNumber = process.env.PHONE || "";
   const defaultMessage = "Hola, me gustaría obtener más información.";
 
   return (

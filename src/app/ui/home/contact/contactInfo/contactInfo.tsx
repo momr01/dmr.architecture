@@ -10,11 +10,11 @@ const contactItems = [
   //   icon: <HiPhone size={25} />,
   //   content: "+54 261 6062872",
   // },
-  // {
-  //   id: 2,
-  //   icon: <MdMarkEmailRead size={25} />,
-  //   content: "dani_emr27@hotmail.com",
-  // },
+  {
+    id: 2,
+    icon: <MdMarkEmailRead size={25} />,
+    content: "dmr.arquitectura3d@outlook.com",
+  },
   {
     id: 3,
     icon: <RiInstagramFill size={25} />,
