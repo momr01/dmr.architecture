@@ -10,7 +10,7 @@
 }
 
 .cardContainer {
-  @apply overflow-hidden relative cursor-pointer flex justify-center items-center h-[500px] w-full max-w-[600px];
+  @apply overflow-hidden relative cursor-pointer flex justify-center items-center h-[500px] w-full max-w-[600px] border;
   @apply md:h-[700px];
   @apply lg:h-[600px];
   @apply 2xl:h-[700px];
@@ -24,11 +24,11 @@
 }
 
 .cardContainerWhite {
-  @apply border-white border-4;
+  @apply border-white;
 }
 
 .cardContainerPrimary {
-  @apply border-primary border-8;
+  @apply border-primary;
 }
 
 .img {

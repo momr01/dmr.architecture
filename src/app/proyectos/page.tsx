@@ -4,7 +4,7 @@ import { projects } from "@/data/projectsItems";
 
 const ProjectsPage = () => {
   return (
-    <section className="bg-black pb-20 md:pb-0">
+    <section className="bg-black pb-20">
       <div className="mt-20">
         <h2 className="uppercase text-white">Proyectos</h2>
         <ProjectsContainer limit={projects.length} />

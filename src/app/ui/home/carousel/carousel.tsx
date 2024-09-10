@@ -134,7 +134,7 @@ const HomeCarousel = () => {
 
       <Carousel
         slideInterval={4000}
-        //slide={false}
+        slide={false}
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
@@ -224,7 +224,8 @@ const HomeCarousel = () => {
             objectFit="cover"
             // objectFit="contain"
             // objectPosition="center"
-            objectPosition="center"
+            //objectPosition="center"
+            className="object-[33%_100%] md:object-center"
           />
           {/* <div className="absolute inset-0 bg-black opacity-40"></div> */}
         </div>
@@ -241,8 +242,9 @@ const HomeCarousel = () => {
             src={imgCarousel2}
             alt="Descripción de la imagen"
             layout="fill"
-            objectFit="fill"
-            objectPosition="center"
+            objectFit="cover"
+            //objectPosition="center"
+            className="object-[36%_75%] md:object-center"
           />
           {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
         </div>
@@ -258,7 +260,7 @@ const HomeCarousel = () => {
             src={imgCarousel3}
             alt="Descripción de la imagen"
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
             objectPosition="center"
           />
         </div>

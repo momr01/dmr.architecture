@@ -57,7 +57,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Proyecto Oficinas & Centro Comercial",
+    title: "Oficinas & Centro Comercial",
     isMain: true,
     images: [ofCC1, ofCC2, ofCC3],
   },

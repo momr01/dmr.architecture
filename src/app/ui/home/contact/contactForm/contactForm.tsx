@@ -15,6 +15,8 @@ import {
   customThemeBtn,
   customThemeTextarea,
 } from "./customTheme";
+import Swal from "sweetalert2";
+//import "sweetalert2/src/sweetalert2.scss";
 
 const ContactForm = () => {
   const sendContactForm = async (prevState: any, formData: FormData) => {
@@ -48,7 +50,24 @@ const ContactForm = () => {
       //   return "Error al enviar el mensaje";
       // }
 
-      alert("todo ok");
+      // alert("todo ok");
+      Swal.fire({
+        title: "Custom animation with Animate.css",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+      });
     } catch (err: any) {
       if (err) {
         // console.log(err)
