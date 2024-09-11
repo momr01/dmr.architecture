@@ -5,7 +5,6 @@ const messageSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      //min: 6,
       validate: (name: string) => {
         if (!name?.length || name.length <= 5) {
           new Error("Name must be at least 6 characters.");
@@ -16,7 +15,6 @@ const messageSchema = new mongoose.Schema(
     email: {
       type: String,
       required: true,
-      // min: 10,
       validate: (email: string) => {
         if (!email?.length || email.length < 10) {
           new Error("Email must be at least 10 characters.");
@@ -27,7 +25,6 @@ const messageSchema = new mongoose.Schema(
     phone: {
       type: String,
       required: true,
-      //  min: 10,
       validate: (phone: string) => {
         if (!phone?.length || phone.length < 10) {
           new Error("Phone must be at least 10 numbers.");
@@ -38,8 +35,6 @@ const messageSchema = new mongoose.Schema(
     content: {
       type: String,
       required: true,
-      // min: 10,
-      //max: 500,
       validate: (content: string) => {
         if (!content?.length || content.length < 10 || content.length > 500) {
           new Error(

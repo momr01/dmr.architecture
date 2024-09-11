@@ -1,0 +1,11 @@
+.section {
+  @apply bg-black pb-20;
+}
+
+.container {
+  @apply mt-20;
+}
+
+.mainTitle {
+    @apply uppercase text-white;
+}

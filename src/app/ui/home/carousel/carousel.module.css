@@ -1,3 +1,23 @@
 .container {
   @apply h-auto;
 }
+
+.carousel {
+  @apply h-[80vh];
+  @apply lg:h-[100vh];
+}
+
+.imgContainer {
+  @apply relative w-full overflow-hidden h-[80vh];
+  @apply lg:h-[100vh];
+}
+
+.imgCentered1 {
+  @apply object-[33%_100%];
+  @apply md:object-center;
+}
+
+.imgCentered2 {
+  @apply object-[36%_75%];
+  @apply md:object-center;
+}
