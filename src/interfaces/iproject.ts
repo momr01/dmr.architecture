@@ -5,4 +5,5 @@ export interface IProject {
   title: string;
   isMain: boolean;
   images: StaticImageData[];
+  createdAt: string;
 }

@@ -6,6 +6,7 @@ import {
   logoCompleteBlack,
   logoCompleteBlackBorder,
   logoCompleteWhite,
+  logoMOMR,
 } from "@/assets/img/logo/imgLogo";
 import { customThemeFooter } from "./customTheme";
 import { usePathname } from "next/navigation";
@@ -23,7 +24,11 @@ const Footer = () => {
       }`}
       theme={customThemeFooter}
     >
-      <div className={`w-full text-center ${isProjectsPage ? 'mb-5' : 'mb-24'} lg:mb-10`}>
+      <div
+        className={`w-full text-center ${
+          isProjectsPage ? "mb-5" : "mb-24"
+        } lg:mb-10`}
+      >
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           {/* <FooterFBR.Brand
             href="https://flowbite.com"
@@ -56,7 +61,16 @@ const Footer = () => {
           year={2024}
           className={isProjectsPage ? styles.textBlack : styles.textWhite}
         />
-        <FooterFBR.Title title="Desarrollado por MOMR™" className="mt-2" />
+        {/* <FooterFBR.Title title="Desarrollado por MOMR™" className="mt-2" /> */}
+        <div className="flex items-end justify-center mt-2">
+          <span className="text-sm font-semibold uppercase text-gray-500 dark:text-white mr-2">
+            Desarrollado por
+          </span>
+          <div className="flex">
+            <Image src={logoMOMR} alt="logoMOMR" width={50} />
+            <span className="text-sm font-semibold uppercase text-gray-500 dark:text-white">™</span>
+          </div>
+        </div>
       </div>
     </FooterFBR>
   );

@@ -20,3 +20,19 @@
 .spanText {
   @apply font-medium italic text-gray-500;
 }
+
+.errorText {
+  @apply mt-1 text-red-500 text-sm;
+}
+
+.mandatoryText {
+  @apply text-end mt-4 text-sm italic text-black font-semibold;
+}
+
+.mandatoryStar {
+  @apply text-red-500;
+}
+
+.spinnerText {
+  @apply pl-3;
+}
