@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./cardProject.module.css";
 import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
@@ -28,7 +28,7 @@ const CardProject = ({ el, delay }: { el: IProject; delay: number }) => {
 
   const { ref, inView } = useInView({
     triggerOnce: true, // Solo dispara la animación una vez
-    threshold: 0.05, // El porcentaje del elemento visible para activar la animación
+    threshold: 0.1, // El porcentaje del elemento visible para activar la animación
   });
 
   // Define un retraso basado en el índice del elemento
@@ -49,6 +49,38 @@ const CardProject = ({ el, delay }: { el: IProject; delay: number }) => {
   // Asegúrate de que hay al menos dos palabras
   const firstPart = words.slice(0, 1).join(" ");
   const secondPart = words.slice(1).join(" ");
+
+
+  //   const ref = useRef<HTMLDivElement>(null);
+  // const [isVisible, setIsVisible] = useState(false);
+
+  // // Animación con react-spring
+  // const props = useSpring({
+  //   opacity: isVisible ? 1 : 0,
+  //   transform: isVisible ? "translateY(0)" : "translateY(20px)",
+  //   config: { tension: 200, friction: 20 },
+  // });
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setIsVisible(entry.isIntersecting); // Cuando la tarjeta está en pantalla, se activa
+  //     },
+  //     {
+  //       threshold: 0.5, // Al menos el 50% de la card debe estar visible
+  //     }
+  //   );
+
+  //   if (ref.current) {
+  //     observer.observe(ref.current);
+  //   }
+
+  //   return () => {
+  //     if (ref.current) {
+  //       observer.unobserve(ref.current);
+  //     }
+  //   };
+  // }, []);
 
   return (
     <>

@@ -25,7 +25,7 @@ const ProjectsContainer = ({ limit }: { limit: number }) => {
         )
         .slice(0, limit)
         .map((el, index) => {
-          const delay = (index % 3) * 700; // Se reinicia cada 3 elementos
+          const delay = (index % 3) * 500; // Se reinicia cada 3 elementos
 
           return <CardProject key={el.id} el={el} delay={delay} />;
         })}

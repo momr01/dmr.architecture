@@ -1,5 +1,5 @@
 .container {
-  @apply fixed z-[10] bottom-0 right-0 w-1/2 flex justify-end border-l;
+  @apply fixed z-[80] bottom-0 right-0 w-1/2 flex justify-end border-l;
   @apply lg:z-10 lg:bottom-16 lg:right-10 lg:w-auto lg:border-none;
 }
 
