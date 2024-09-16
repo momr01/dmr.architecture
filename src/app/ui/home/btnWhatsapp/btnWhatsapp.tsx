@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const BtnWhatsapp = () => {
   const phoneNumber = process.env.PHONE || "";
-  const defaultMessage = "Hola, me gustaría obtener más información.";
+  const defaultMessage =
+    "Hola! Visité la web, me gustaría recibir más información.";
 
   return (
     <div className={styles.container}>
