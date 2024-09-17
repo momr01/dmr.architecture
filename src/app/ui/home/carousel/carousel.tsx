@@ -22,7 +22,7 @@ const HomeCarousel = () => {
     <div className={styles.container}>
       <Carousel
         slideInterval={4000}
-         //slide={false}
+         slide={false}
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
