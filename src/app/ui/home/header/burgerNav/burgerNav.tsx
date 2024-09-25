@@ -4,33 +4,23 @@ import { INavItem } from "@/interfaces/inavItem";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import styles from "./burgerNav.module.css";
 
 function BurgerNav({
   navItems,
   isProjectsPage,
-  scrolled,
 }: {
   navItems: INavItem[];
   isProjectsPage: boolean;
-  scrolled: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const router = useRouter();
-
-  // const handleRedirect = async (path: string) => {
-  //   // Redirige a la página principal con el ID específico
-  //   await router.push(`/${path}`);
-  //   setIsOpen(false);
-  // };
-
   const handleRedirect = (path: string) => {
-    // const router = useRouter();
-
     // Inicia la redirección
     router.push(`/${path}`);
 
@@ -39,28 +29,28 @@ function BurgerNav({
   };
 
   return (
-    <div className="relative">
-      <button onClick={toggleMenu} className="focus:outline-none z-10 px-8">
+    <div className={styles.container}>
+      <button onClick={toggleMenu} className={styles.burgerBtn}>
         <div
-          className={`w-8 h-1 ${
-            isProjectsPage ? "bg-black" : "bg-white"
-          } mb-1 transform transition duration-300 ease-in-out ${
-            isOpen ? "rotate-45 translate-y-2" : ""
-          }`}
+          className={`${styles.burgerBtnLineTransform} ${
+            isProjectsPage
+              ? styles.burgerBtnLineBlack
+              : styles.burgerBtnLineWhite
+          }  ${isOpen ? "rotate-45 translate-y-2" : ""}`}
         ></div>
         <div
-          className={`w-8 h-1 ${
-            isProjectsPage ? "bg-black" : "bg-white"
-          } mb-1 transition duration-300 ease-in-out ${
-            isOpen ? "opacity-0" : ""
-          }`}
+          className={`${styles.burgerBtnLineMb} ${
+            isProjectsPage
+              ? styles.burgerBtnLineBlack
+              : styles.burgerBtnLineWhite
+          }  ${isOpen ? "opacity-0" : ""}`}
         ></div>
         <div
-          className={`w-8 h-1 ${
-            isProjectsPage ? "bg-black" : "bg-white"
-          } transition duration-300 ease-in-out ${
-            isOpen ? "-rotate-45 -translate-y-2" : ""
-          }`}
+          className={`${styles.burgerBtnLines} ${
+            isProjectsPage
+              ? styles.burgerBtnLineBlack
+              : styles.burgerBtnLineWhite
+          }  ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
         ></div>
       </button>
 
@@ -79,18 +69,12 @@ function BurgerNav({
         }`}
       >
         <div className="w-[60%] mx-auto py-10">
-        <Image src={logoWhite} alt="logo" />
+          <Image src={logoWhite} alt="logo" />
         </div>
-       
+
         <ul className="flex flex-col items-center justify-start h-full mt-24">
           {navItems.map((item) => (
             <li key={item.id} className="mb-10">
-              {/* <a 
-              href={item.href} 
-             
-              className="text-black text-xl">
-                {item.title}
-              </a> */}
               <button
                 onClick={() => handleRedirect(item.href)}
                 className="text-white text-xl"

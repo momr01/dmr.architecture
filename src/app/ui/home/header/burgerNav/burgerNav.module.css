@@ -1,0 +1,30 @@
+.container {
+  @apply relative;
+}
+
+.burgerBtn {
+  @apply z-10 px-8;
+  @apply focus:outline-none;
+}
+
+.burgerBtnLines {
+    @apply w-8 h-1 transition duration-300 ease-in-out;
+}
+
+.burgerBtnLineBlack {
+    @apply bg-black;
+}
+
+.burgerBtnLineWhite {
+    @apply bg-white;
+}
+
+.burgerBtnLineMb {
+    @apply burgerBtnLines;
+    @apply mb-1;
+}
+
+.burgerBtnLineTransform {
+    @apply burgerBtnLineMb;
+    @apply transform;
+}

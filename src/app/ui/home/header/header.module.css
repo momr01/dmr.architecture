@@ -46,6 +46,10 @@
   @apply lg:block;
 }
 
+.navItemBtn {
+  @apply hover:underline hover:underline-offset-[10px];
+}
+
 .burgerNav {
   @apply lg:hidden;
 }
