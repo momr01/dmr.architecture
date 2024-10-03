@@ -22,7 +22,7 @@ const HomeCarousel = () => {
     <div className={styles.container}>
       <Carousel
         slideInterval={4000}
-         //slide={false}
+        // slide={false}
         leftControl={" "}
         rightControl={" "}
         theme={customThemeCarousel}
@@ -33,8 +33,12 @@ const HomeCarousel = () => {
           <Image
             src={imgCarousel1}
             alt="Descripción de la imagen"
-            layout="fill"
-            objectFit="cover"
+            fill
+            // style={{ objectFit: "cover" }}
+            //objectFit="cover"
+            // layout="fill"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            // objectFit="cover"
             // className={`${styles.imgCentered1} ${
             //   activeIndex === 0 ? styles.imgZoomEffect : ""
             // }`}
@@ -52,8 +56,9 @@ const HomeCarousel = () => {
           <Image
             src={imgCarousel2}
             alt="Descripción de la imagen"
-            layout="fill"
-            objectFit="cover"
+            fill
+            // layout="fill"
+            // objectFit="cover"
             // className={styles.imgCentered2}
             className={`${styles.imgCentered2} ${
               activeIndex === 1
@@ -64,16 +69,15 @@ const HomeCarousel = () => {
             }`}
           />
         </div>
-        <div
-          className={styles.imgContainer}
-        >
+        <div className={styles.imgContainer}>
           <Image
             src={imgCarousel3}
             alt="Descripción de la imagen"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className={` ${
+            //layout="fill"
+            //objectFit="cover"
+            fill
+            // objectPosition="center"
+            className={`${styles.imgObjectCover} ${
               activeIndex === 2
                 ? styles.imgZoomEffect
                 : activeIndex > 2

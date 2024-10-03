@@ -9,6 +9,10 @@
   @apply lg:h-[100vh];
 }
 
+.imgObjectCover {
+  @apply object-cover;
+}
+
 .imgContainer {
   @apply relative w-full overflow-hidden;
   /* @apply h-[80vh];
@@ -18,12 +22,14 @@
 }
 
 .imgCentered1 {
+  @apply imgObjectCover;
   @apply object-[37%_100%];
   /* @apply object-[33%_100%]; */
   @apply md:object-center;
 }
 
 .imgCentered2 {
+  @apply imgObjectCover;
   /* @apply object-[36%_75%]; */
   @apply object-[65%_75%];
   @apply md:object-center;

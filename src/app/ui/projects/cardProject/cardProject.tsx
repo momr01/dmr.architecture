@@ -50,7 +50,6 @@ const CardProject = ({ el, delay }: { el: IProject; delay: number }) => {
   const firstPart = words.slice(0, 1).join(" ");
   const secondPart = words.slice(1).join(" ");
 
-
   //   const ref = useRef<HTMLDivElement>(null);
   // const [isVisible, setIsVisible] = useState(false);
 
@@ -98,10 +97,13 @@ const CardProject = ({ el, delay }: { el: IProject; delay: number }) => {
         <Image
           src={el.images[0]}
           alt="img"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
+          fill
+          //layout="fill"
+          //objectFit="cover"
+          //objectPosition="center"
           className={styles.img}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          priority
         />
         <h3 className="absolute z-40 text-white text-2xl text-center uppercase px-10 font-semibold tracking-wider">
           {/* {el.title} */}

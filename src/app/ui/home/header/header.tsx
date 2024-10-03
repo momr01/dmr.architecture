@@ -56,7 +56,9 @@ const Header = () => {
         <Image
           src={!isProjectsPage ? logoCompleteWhite : logoCompleteBlack}
           alt="logo"
-          width={150}
+          //  width={150}
+          className="w-[150px]"
+          priority
         />
       </Link>
       <nav
@@ -81,10 +83,7 @@ const Header = () => {
         </div>
       </nav>
       <div className={styles.burgerNav}>
-        <BurgerNav
-          navItems={navItems}
-          isProjectsPage={isProjectsPage}
-        />
+        <BurgerNav navItems={navItems} isProjectsPage={isProjectsPage} />
       </div>
     </header>
   );

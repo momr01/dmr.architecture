@@ -8,18 +8,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DMR Arquitectura",
-  description: "DMR Arquitectura 3D",
+  description: "DMR Arquitectura 3D - Sitio Web Oficial",
   icons: {
     icon: [
       {
-        media: '(prefers-color-scheme: light)',
-        url: '/images/icon.png',
-        href: '/images/icon.png',
+        media: "(prefers-color-scheme: light)",
+        url: "/images/icon.png",
+        href: "/images/icon.png",
       },
       {
-        media: '(prefers-color-scheme: dark)',
-        url: '/images/icon.png',
-        href: '/images/icon.png',
+        media: "(prefers-color-scheme: dark)",
+        url: "/images/icon.png",
+        href: "/images/icon.png",
       },
     ],
   },

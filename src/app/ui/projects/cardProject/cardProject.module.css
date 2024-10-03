@@ -35,6 +35,7 @@
   width: 100%;
   height: auto;
   transition: transform 3s ease; /* Suaviza la transformación de la imagen */
+  @apply object-cover;
 }
 
 .cardContainer:hover .img {

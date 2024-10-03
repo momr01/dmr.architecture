@@ -4,9 +4,13 @@ import styles from "./btnWhatsapp.module.css";
 import Link from "next/link";
 
 const BtnWhatsapp = () => {
-  const phoneNumber = process.env.PHONE || "";
+  const phoneNumber = process.env.NEXT_PUBLIC_PHONE || "";
   const defaultMessage =
     "Hola! Visité la web, me gustaría recibir más información.";
+
+  if (!phoneNumber) {
+    return null; // No renderizar el botón si no hay un número
+  }
 
   return (
     <div className={styles.container}>

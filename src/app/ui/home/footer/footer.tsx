@@ -41,6 +41,7 @@ const Footer = () => {
               src={isProjectsPage ? logoCompleteBlack : logoCompleteWhite}
               alt="logo"
               className="w-[100px] md:w-[150px]"
+              priority
             />
           </div>
 
@@ -68,7 +69,9 @@ const Footer = () => {
           </span>
           <div className="flex">
             <Image src={logoMOMR} alt="logoMOMR" width={50} />
-            <span className="text-sm font-semibold uppercase text-gray-500 dark:text-white">™</span>
+            <span className="text-sm font-semibold uppercase text-gray-500 dark:text-white">
+              ™
+            </span>
           </div>
         </div>
       </div>
